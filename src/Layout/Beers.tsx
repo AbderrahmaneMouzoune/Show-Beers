@@ -36,7 +36,7 @@ function Beers({ page }: IBeers) {
                     )
                     :
                     (
-                        beers.map(({ id, name, tagline, description, image_url }) => {
+                        beers.map(({ id, name, tagline, description, image_url, food_pairing }) => {
                             return (
                                 <Beer
                                     id={id}
@@ -44,6 +44,7 @@ function Beers({ page }: IBeers) {
                                     tagline={tagline}
                                     description={description}
                                     image={image_url}
+                                    FoodPairing={food_pairing}
                                 />
                             )
                         })
