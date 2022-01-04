@@ -1,0 +1,52 @@
+$base-card-radius: 15px;
+
+.card {
+    border: none;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    border-radius: $base-card-radius;
+    -webkit-box-shadow: 0 0 20px rgb(8 21 66 / 5%);
+    box-shadow: 0 0 20px rgb(8 21 66 / 5%);
+    cursor: pointer;
+
+    &-footer,
+    &-header {
+        background-color: #fff;
+        border-color: #ecf3fa;
+    }
+
+    &-header {
+        border-top-right-radius: $base-card-radius;
+        border-top-left-radius: $base-card-radius;
+        padding: 40px;
+    }
+
+    &-title {
+        color: $primary;
+        font-weight: 500;
+    }
+
+    &-inline {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &-tags {
+        color: #586082;
+
+        &:not(:first-child) {
+            border-left: 1px solid #a8b0c2;
+            padding-left: 8px;
+            margin-left: 8px;
+            line-height: 1;
+        }
+
+        &-wrapper {
+        }
+    }
+
+    &-img-top {
+        width: 150px;
+        padding: 20px;
+    }
+}

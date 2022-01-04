@@ -1,0 +1,28 @@
+$theme-colors: (
+    'primary': #7366ff,
+    'secondary': #f73164,
+    'body-color': #2b2b2b,
+    'blue': #7366ff,
+);
+
+$primary: #7366ff;
+
+body {
+    font-size: 14px;
+    font-family: Rubik, sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    background-color: #f5f5f6;
+    overflow-x: hidden;
+}
+
+.btn {
+    color: #fff !important;
+}
+
+button {
+    user-select: none;
+}
+
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import './component/_card.scss';

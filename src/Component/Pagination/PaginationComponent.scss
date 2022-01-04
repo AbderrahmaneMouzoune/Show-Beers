@@ -1,0 +1,9 @@
+.pagination {
+    justify-content: flex-end;
+}
+
+.page-link {
+    &[disabled] {
+        opacity: 0.4;
+    }
+}
