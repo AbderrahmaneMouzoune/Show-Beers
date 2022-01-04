@@ -61,9 +61,6 @@ function Beer({ name, description, tagline, image, foodPairing }: IBeer) {
                 <ModalHeader>{name}</ModalHeader>
                 <ModalBody>
                     {description}
-
-                    <br /> <br />
-                    Ingredients : {}
                 </ModalBody>
                 <ModalFooter className='justify-content-between'>
                     <div className="card-tags-wrapper">

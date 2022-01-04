@@ -1,11 +1,9 @@
-import axios from 'axios'
-import { useEffect, useState } from 'react'
 import { Container, Row } from 'reactstrap'
-import { formatSearchForHuman } from '../../App'
+import { ApiBeer } from '../../Api'
 import Beer from '../../Component/Beer/Beer'
 
 interface IBeers {
-    beers: any[]
+    beers: ApiBeer[]
     search: string
 }
 
@@ -35,7 +33,7 @@ function Beers({ beers, search }: IBeers) {
                                 tagline={tagline}
                                 description={description}
                                 image={image_url}
-                                FoodPairing={food_pairing}
+                                foodPairing={food_pairing}
                             />
                         )
                     }

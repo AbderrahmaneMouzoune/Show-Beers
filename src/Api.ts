@@ -1,10 +1,10 @@
-export interface Beer {
+export interface ApiBeer {
     id: number
     name: string
     tagline: string
     description: string
-    image: string | null
-    foodPairing?: string[]
+    image_url: string | null
+    food_pairing?: string[]
     ingredients: Ingredients
 }
 interface Ingredients {
