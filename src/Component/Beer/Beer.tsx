@@ -29,7 +29,10 @@ function Beer({ name, description, tagline, image, foodPairing }: IBeer) {
 
     return (
         <Col sm={6} className="mt-2">
-            <Card className="card-inline" onClick={() => setDisplayDesc(true)}>
+            <Card
+                className="card-inline cursor-pointer"
+                onClick={() => setDisplayDesc(true)}
+            >
                 <CardImg
                     top
                     width="100px"
@@ -59,10 +62,8 @@ function Beer({ name, description, tagline, image, foodPairing }: IBeer) {
 
             <Modal isOpen={displayDesc} toggle={closePopin}>
                 <ModalHeader>{name}</ModalHeader>
-                <ModalBody>
-                    {description}
-                </ModalBody>
-                <ModalFooter className='justify-content-between'>
+                <ModalBody>{description}</ModalBody>
+                <ModalFooter className="justify-content-between">
                     <div className="card-tags-wrapper">
                         {foodPairing?.map((pair, i) => {
                             return (

@@ -28,6 +28,6 @@ export interface Amount {
     unit: Unit
 }
 
-type Unit = "kilograms" | "celsius" | "grams" | "litres" | string
-type Step = "start" | "middle" | "end" | string
-type Attribute = "flavour" | "bitter" | string
+type Unit = 'kilograms' | 'celsius' | 'grams' | 'litres' | string
+type Step = 'start' | 'middle' | 'end' | string
+type Attribute = 'flavour' | 'bitter' | string

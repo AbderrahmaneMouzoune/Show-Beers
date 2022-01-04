@@ -15,8 +15,8 @@
 
         &-bar {
             background-color: #fff;
-            border-radius: 10px 0 0 10px;
-            border: 2px solid #7366ff;
+            border-radius: 10px;
+            border: 1px solid #7366ff;
             outline-offset: 0;
             padding-left: 20px;
             padding: 12px 10px;
@@ -24,12 +24,5 @@
             color: #7366ff;
             outline: none;
         }
-    }
-
-    .btn {
-        line-height: 32px;
-        font-size: 16px;
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
     }
 }

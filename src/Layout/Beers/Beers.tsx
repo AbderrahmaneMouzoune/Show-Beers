@@ -13,7 +13,7 @@ function Beers({ beers, search }: IBeers) {
             <Row>
                 {!!search && (
                     <h6 className="mb-2">
-                        Search result for "{search}"{' '}
+                        Search result for &quot;{search}&quot;{' '}
                         {`(${beers.length} results)`}
                     </h6>
                 )}
@@ -28,6 +28,7 @@ function Beers({ beers, search }: IBeers) {
                     }) => {
                         return (
                             <Beer
+                                key={`beer-${id}`}
                                 id={id}
                                 name={name}
                                 tagline={tagline}

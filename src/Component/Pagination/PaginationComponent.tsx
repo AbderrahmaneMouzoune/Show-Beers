@@ -9,7 +9,7 @@ interface IPagination {
 
 function PaginationComponent({ pages, actual, goToPage }: IPagination) {
     return (
-        <Pagination className="container-fluid">
+        <Pagination className="container-fluid mt-5">
             <PaginationItem>
                 <PaginationLink
                     previous
@@ -25,7 +25,10 @@ function PaginationComponent({ pages, actual, goToPage }: IPagination) {
                     if (i == 0) return
 
                     return (
-                        <PaginationItem active={actual == i}>
+                        <PaginationItem
+                            key={'pagination-item' + i}
+                            active={actual == i}
+                        >
                             <PaginationLink onClick={() => goToPage(i)}>
                                 {i}
                             </PaginationLink>

@@ -9,11 +9,9 @@ function App() {
     const [page, setPage] = useState(1)
     const [search, setSearch] = useState('')
     const [beers, setBeers] = useState([])
-    const [isLoading, setIsLoading] = useState(true)
 
     // Handle when we change page
     useEffect(() => {
-        setIsLoading(true)
         axios
             .get(`https://api.punkapi.com/v2/beers?page=${page}&per_page=5`)
             .then(function (response) {
@@ -22,15 +20,14 @@ function App() {
             .catch(function (error) {
                 console.log(error)
             })
-            .then(function () {
-                setIsLoading(false)
-            })
     }, [page])
 
     useEffect(() => {
-        if (!search.match(/_+/gm)) return
-
-        setIsLoading(true)
+        if (
+            formatSearchForApi(search).match(/_+/gm) ||
+            formatSearchForApi(search) === '_'
+        )
+            return
 
         axios
             .get(
@@ -42,20 +39,13 @@ function App() {
             .catch(function (error) {
                 console.log(error)
             })
-            .then(function () {
-                setIsLoading(false)
-            })
     }, [search])
 
     return (
         <Container fluid className="mt-2">
             <Row>
                 <Col sm={12}>
-                    <h1 className="text-center m-4 text-primary">
-                        {' '}
-                        <span className="text-secondary">B</span>row
-                        <span className="text-secondary">B</span>rew
-                    </h1>
+                    <h1 className="text-center m-4 text-secondary">BROWBREW</h1>
                 </Col>
             </Row>
             <Row className="justify-content-center">
@@ -82,6 +72,7 @@ function App() {
                                 <Row>
                                     <Col sm={12}>
                                         <Beers
+                                            key={'beers'}
                                             beers={beers}
                                             search={formatSearchForHuman(
                                                 search
@@ -103,8 +94,6 @@ function App() {
             </Row>
         </Container>
     )
-
-    function updateSearch() {}
 }
 
 export function formatSearchForApi(word: string): string {
